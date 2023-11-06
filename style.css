@@ -1,0 +1,193 @@
+/* Styling til mobiludgave */
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    font-family: 'Roboto', sans-serif;   
+}
+
+main
+{
+    margin: 0.5rem;
+}
+
+main section article img
+{
+    width: 100%;
+}
+
+h1, p
+{
+    margin: 2rem 0;
+}
+
+nav
+{
+ min-height: 50px;
+    background-color: hsl(0, 0%, 50%);
+}
+
+
+nav ul
+{
+    /* I mobilvisning skal menuen ikke vises, før brugeren har klikket på hamburger menu ikonet */
+    width: 100%;
+    list-style-type: none;
+    text-transform: uppercase;
+    font-size: 24px;
+    padding-top: 3vw;
+    padding-bottom: 1vw;
+}
+
+.ul-start {
+    display:none;
+    margin-left: 40%;
+    margin-right: 50%;
+    flex-direction: column;
+}
+
+
+.menu-btn:checked ~.ul-start {
+    display: flex;
+}
+
+nav ul ul a{
+    background-color: hsla(0, 0%, 50%, 0.863);
+    display: none;
+    width: 110%;
+    
+}
+
+
+nav ul li a
+{
+    text-decoration: none;
+    color: black;
+}
+
+/* Fælles styling for checkbox og menuikoner */
+nav .menu-btn, nav>img
+{
+    height: 40px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+/* Separat styling for checkbox */
+nav .menu-btn
+{
+    display: block;
+    width: 40px;
+    z-index: 8;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Separat styling for menuikoner */
+nav>img
+{
+    z-index: 7;
+}
+
+nav .menu-btn ~ .menuicon
+{
+    display: block;
+}
+
+nav .menu-btn ~ .closeicon
+{
+    visibility: hidden;
+}
+
+.menu-btn:checked ~.closeicon{
+   visibility: visible;
+}
+.menu-btn:checked ~.menuicon {
+   visibility: hidden;
+}
+
+.menu-c:hover li a{
+    display: flex;
+}
+
+.menus {
+    color: rgba(0, 0, 0, 0.575);
+}
+
+.under-menu {
+    padding-top: 1%;
+}
+
+a {
+    background-color: rgba(110, 110, 110, 0.322);
+    padding: 1%;
+    line-height: 2;
+}
+
+/* Særlig styling til desktop - minimum viewport bredde på 768 pixels */
+
+@media only screen and (min-width: 768px)
+{
+    nav
+    {
+        line-height: 50px;
+        max-height: 50px;
+    }
+
+
+    .under-menu {
+        position: absolute;
+        top: 37px;
+        width: 12rem;
+       flex-direction: column;
+    }
+
+    .ul-start {
+        display: flex;
+        flex-direction: row;
+        padding: 0%;
+        margin: 0%;
+    }
+
+    nav .menu-btn ~ .menuicon
+    {
+        display: none;
+    }
+
+    nav input.menu-btn
+    {
+        display: none;
+    }
+
+    nav ul
+    {
+        display: flex;
+        justify-content: space-evenly;
+        height: auto;   
+    }
+
+    nav ul li
+    {
+        padding: 0;
+    }
+
+    nav ul li a
+    {
+        padding: 11px;
+        color: gainsboro;
+    }
+
+    nav ul li:hover a
+    {
+         color: aliceblue;
+        visibility: visible;
+    }
+
+}
+
